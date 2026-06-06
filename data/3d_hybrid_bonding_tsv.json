@@ -1,0 +1,82 @@
+{
+  "name": "3D_Hybrid_Bonding_TSV",
+  "integration_type": "3D",
+  "description": "Vertical die stacking using oxide/Cu hybrid bonding and TSV power/signal access. High density, high performance, thermally constrained.",
+  "geometry": {
+    "package_area_mm2": 1200,
+    "substrate_area_mm2": 1200,
+    "interposer_area_mm2": 0,
+    "num_logic_dies": 2,
+    "logic_die_area_mm2": 450,
+    "num_sram_cache_dies": 2,
+    "sram_die_area_mm2": 450,
+    "num_hbm_stacks": 4,
+    "hbm_die_area_mm2": 80,
+    "rdl_layers": 4,
+    "interconnect_pitch_um": 5,
+    "tsv_count": 50000,
+    "tsv_pitch_um": 40,
+    "hybrid_bond_pads": 2000000,
+    "hybrid_bond_pitch_um": 2,
+    "stack_height_um": 700
+  },
+  "process_flow": [
+    {"step": "frontside_preparation", "cost_usd_per_wafer": 600, "energy_kwh_per_wafer": 20},
+    {"step": "hybrid_bond_pad_formation", "cost_usd_per_wafer": 900, "energy_kwh_per_wafer": 35},
+    {"step": "oxide_cmp_planarization", "cost_usd_per_wafer": 500, "energy_kwh_per_wafer": 15},
+    {"step": "surface_activation_clean", "cost_usd_per_wafer": 350, "energy_kwh_per_wafer": 10},
+    {"step": "die_to_wafer_hybrid_bonding", "num_dies": 4, "cost_usd_per_die": 6.0, "energy_kwh_per_die": 0.08},
+    {"step": "post_bond_anneal", "cost_usd_per_wafer": 250, "energy_kwh_per_wafer": 18},
+    {"step": "wafer_thinning", "cost_usd_per_wafer": 450, "energy_kwh_per_wafer": 12},
+    {"step": "backside_tsv_reveal", "cost_usd_per_wafer": 550, "energy_kwh_per_wafer": 16},
+    {"step": "backside_rdl_build", "layers": 4, "cost_usd_per_layer_per_wafer": 300, "energy_kwh_per_layer_per_wafer": 14},
+    {"step": "micro_bump_or_c4_to_substrate", "cost_usd_per_package": 45, "energy_kwh_per_package": 0.35},
+    {"step": "thermal_interface_and_lid", "cost_usd_per_package": 25, "energy_kwh_per_package": 0.08},
+    {"step": "final_test", "cost_usd_per_package": 35, "energy_kwh_per_package": 0.4}
+  ],
+  "materials": {
+    "silicon_kg_per_package": 0.0030,
+    "copper_kg_per_package": 0.0018,
+    "organic_substrate_kg_per_package": 0.025,
+    "sio2_kg_per_package": 0.0010,
+    "polyimide_kg_per_package": 0.0003,
+    "underfill_kg_per_package": 0.0005,
+    "mold_compound_kg_per_package": 0.0000,
+    "solder_kg_per_package": 0.0008
+  },
+  "yield_model": {
+    "logic_die_yield": 0.80,
+    "sram_die_yield": 0.86,
+    "hbm_stack_yield": 0.90,
+    "hybrid_bond_yield": 0.90,
+    "tsv_reveal_yield": 0.94,
+    "substrate_yield": 0.95,
+    "assembly_yield": 0.90,
+    "final_test_yield": 0.97
+  },
+  "cost_model": {
+    "logic_die_cost_usd": 210,
+    "num_logic_dies": 2,
+    "sram_die_cost_usd": 90,
+    "num_sram_cache_dies": 2,
+    "hbm_stack_cost_usd": 85,
+    "num_hbm_stacks": 4,
+    "substrate_cost_usd": 120,
+    "assembly_base_cost_usd": 130,
+    "test_cost_usd": 35
+  },
+  "lca_model": {
+    "region": "taiwan",
+    "electricity_kwh_per_package_extra": 0.0,
+    "water_l_per_package": 220
+  },
+  "performance_model": {
+    "bandwidth_tb_s": 8.0,
+    "energy_pj_per_bit": 0.8,
+    "latency_ns": 3,
+    "thermal_resistance_k_per_w": 0.18,
+    "max_power_w": 650,
+    "interconnect_density_io_per_mm": 200,
+    "average_interconnect_length_mm": 0.2
+  }
+}

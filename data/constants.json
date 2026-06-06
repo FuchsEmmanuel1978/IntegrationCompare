@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "description": "Common assumptions for cost/LCA/performance comparison of advanced packaging integrations.",
+    "currency": "USD",
+    "version": "0.1"
+  },
+  "wafer": {
+    "diameter_mm": 300,
+    "area_mm2": 70685,
+    "edge_loss_factor": 0.85
+  },
+  "electricity_co2e_kg_per_kwh": {
+    "france": 0.05,
+    "taiwan": 0.45,
+    "usa": 0.38,
+    "korea": 0.42,
+    "world_default": 0.45
+  },
+  "material_co2e_kg_per_kg": {
+    "silicon": 200,
+    "copper": 4,
+    "organic_substrate": 8,
+    "sio2": 1.5,
+    "polyimide": 6,
+    "underfill": 7,
+    "mold_compound": 5,
+    "solder": 20
+  },
+  "default_financials": {
+    "gross_margin_factor": 1.0,
+    "scrap_credit_factor": 0.0
+  }
+}

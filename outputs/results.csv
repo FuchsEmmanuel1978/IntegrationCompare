@@ -1,0 +1,4 @@
+name,type,package_area_mm2,interconnect_pitch_um,tsv_count,hybrid_bond_pads,total_yield,raw_cost_usd,yield_adjusted_cost_usd,raw_co2e_kg,yield_adjusted_co2e_kg,energy_kwh_per_package_raw,bandwidth_tb_s,energy_pj_per_bit,latency_ns,thermal_resistance_k_per_w,performance_score,cost_per_tb_s_usd,co2e_per_tb_s_kg
+2.0D_Organic_SiP,2.0D,1800,130,0,0,0.6549,713.5,1089.54,1.283,1.959,1.45,1.5,8.0,30,0.1,0.0625,726.36,1.306
+2.5D_TSV_Silicon_Interposer,2.5D,2500,40,100000,0,0.5057,1464.08,2895.13,4.769,9.43,8.218,5.0,2.5,10,0.12,1.6667,579.03,1.886
+3D_Hybrid_Bonding_TSV,3D,1200,5,50000,2000000,0.4344,1449.87,3337.26,2.983,6.867,4.785,8.0,0.8,3,0.18,18.5185,417.16,0.858
