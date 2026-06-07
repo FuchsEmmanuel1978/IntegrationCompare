@@ -130,6 +130,38 @@
   "hbm_die_count": 6,
   "tsv_count_visual": 6
   },
+  "hb_hbm_detail": {
+    "zoom_mode": true,
+  "visible_bottom_si_um": 100,
+  "show_bottom_truncation": true,
+  "bottom_die_thickness_um": 775,
+  "top_die_thickness_um": 120,
+
+  "metal_layer_count": 4,
+  "metal_thickness_um": 2,
+  "dielectric_thickness_um": 3,
+
+  "hbm_width_um": 10,
+  "hbm_height_um": 6,
+  "hbm_pitch_um": 22,
+  "hbm_count": 5,
+
+  "hbv_width_um": 4,
+  "hbv_height_um": 18,
+  "hbv_pitch_um": 28,
+  "hbv_count": 4,
+
+  "ubm_width_um": 26,
+  "ubm_height_cu_um": 5,
+  "ubm_height_ni_um": 2,
+  "ubm_height_au_um": 0.3,
+
+  "top_die_width_um": 150,
+  "detail_width_um": 320,
+
+  "tsv_width_um": 16,
+  "tsv_height_um": 150
+},
   "process_flow": [
     {"step": "frontside_preparation", "cost_usd_per_wafer": 600, "energy_kwh_per_wafer": 20},
     {"step": "hybrid_bond_pad_formation", "cost_usd_per_wafer": 900, "energy_kwh_per_wafer": 35},
