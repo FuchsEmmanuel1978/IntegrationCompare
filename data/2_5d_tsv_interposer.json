@@ -17,6 +17,116 @@
     "hybrid_bond_pads": 0,
     "stack_height_um": 900
   },
+   "geometry": {
+    "package_area_mm2": 2500,
+    "interposer_width_mm": 50,
+    "interposer_height_mm": 45,
+    "substrate_width_mm": 65,
+    "substrate_height_mm": 55,
+    "rdl_layers": 6,
+    "interconnect_pitch_um": 40,
+    "tsv_count": 100000
+  },
+
+  "top_view_layout": {
+    "title": "2.5D top view layout - GPU + AI tiles + HBM",
+    "units": "mm",
+
+    "substrate": {
+      "width_mm": 65,
+      "height_mm": 55
+    },
+
+    "interposer": {
+      "x_mm": 7.5,
+      "y_mm": 5,
+      "width_mm": 50,
+      "height_mm": 45
+    },
+
+    "components": [
+      {
+        "name": "Vega 0",
+        "type": "logic",
+        "x_mm": 25,
+        "y_mm": 7,
+        "width_mm": 14,
+        "height_mm": 16,
+        "rotation_deg": 0,
+        "label": "VEGA_0"
+      },
+      {
+        "name": "Vega 1",
+        "type": "logic",
+        "x_mm": 25,
+        "y_mm": 32,
+        "width_mm": 14,
+        "height_mm": 16,
+        "rotation_deg": 180,
+        "label": "VEGA_1"
+      },
+      {
+        "name": "AI tile 1",
+        "type": "ai_tile",
+        "x_mm": 3,
+        "y_mm": 35,
+        "width_mm": 19,
+        "height_mm": 16,
+        "rotation_deg": 0,
+        "label": "AI\nTT\nEAGLE N1"
+      },
+      {
+        "name": "AI tile 2",
+        "type": "ai_tile",
+        "x_mm": 43,
+        "y_mm": 35,
+        "width_mm": 19,
+        "height_mm": 16,
+        "rotation_deg": 0,
+        "label": "AI\nIVI\nLGD EQ2"
+      }
+    ],
+
+    "links": [
+      {
+        "name": "UCIe plain vanilla",
+        "type": "ucie_plain",
+        "from": "Vega 0",
+        "to": "AI tile 1"
+      },
+      {
+        "name": "UCIe plain vanilla",
+        "type": "ucie_plain",
+        "from": "Vega 0",
+        "to": "AI tile 2"
+      },
+      {
+        "name": "UCIe interoperability validation",
+        "type": "ucie_validation",
+        "from": "Vega 0",
+        "to": "Vega 1"
+      }
+    ]
+  },
+    "stack": {
+  "pcb_thickness_um": 900,
+  "solder_ball_height_um": 350,
+  "substrate_thickness_um": 450,
+  "c4_height_um": 120,
+  "ubump_height_um": 25,
+  "interposer_thickness_um": 120,
+  "logic_die_thickness_um": 120,
+  "memory_die_thickness_um": 90,
+  "base_die_thickness_um": 120,
+  "top_die_thickness_um": 70,
+  "m_last_thickness_um": 2,
+  "hb_pad_height_um": 3,
+  "hbv_height_um": 12,
+  "hbm_die_thickness_um": 45,
+  "hbm_die_gap_um": 8,
+  "hbm_die_count": 6,
+  "tsv_count_visual": 6
+  },
   "process_flow": [
     {"step": "silicon_interposer_start", "cost_usd_per_wafer": 700, "energy_kwh_per_wafer": 30},
     {"step": "tsv_etch", "cost_usd_per_wafer": 500, "energy_kwh_per_wafer": 25},
